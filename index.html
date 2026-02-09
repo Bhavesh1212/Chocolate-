@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Chocolate Day Vaish🍫</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Chocolate Day 🍫</title>
 
   <style>
     * {
@@ -26,28 +26,28 @@
       position: absolute;
       font-size: 28px;
       opacity: 0.25;
-      animation: float 12s infinite linear;
+      animation: float 14s infinite linear;
     }
 
     .floating:nth-child(1) {
-      left: 10%;
-      animation-duration: 14s;
+      left: 12%;
+      animation-duration: 18s;
     }
 
     .floating:nth-child(2) {
-      left: 80%;
-      animation-duration: 18s;
+      left: 78%;
+      animation-duration: 22s;
       font-size: 32px;
     }
 
     .floating:nth-child(3) {
-      left: 50%;
-      animation-duration: 16s;
+      left: 48%;
+      animation-duration: 20s;
     }
 
     @keyframes float {
       from {
-        bottom: -50px;
+        bottom: -60px;
       }
       to {
         bottom: 110%;
@@ -56,26 +56,26 @@
 
     /* Card */
     .card {
-      background: #fff;
+      background: #ffffff;
       width: 92%;
       max-width: 360px;
       padding: 28px 22px;
-      border-radius: 24px;
+      border-radius: 26px;
       text-align: center;
-      box-shadow: 0 25px 45px rgba(0,0,0,0.15);
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.15);
       position: relative;
       z-index: 1;
     }
 
     .choco-img {
-      width: 120px;
-      max-width: 45%;
-      margin-bottom: 10px;
+      width: 130px;
+      max-width: 50%;
+      margin-bottom: 12px;
     }
 
     h1 {
       font-size: 22px;
-      margin: 10px 0 6px;
+      margin: 8px 0 6px;
       color: #5a2d0c;
     }
 
@@ -95,17 +95,26 @@
     .btn {
       display: inline-block;
       margin-top: 18px;
-      padding: 12px 22px;
+      padding: 12px 24px;
       background: #5a2d0c;
       color: #fff;
       text-decoration: none;
       border-radius: 999px;
       font-size: 15px;
-      transition: all 0.25s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .btn:active {
       transform: scale(0.95);
+    }
+
+    #secret-message {
+      display: none;
+      margin-top: 18px;
+      font-size: 15px;
+      color: #5a2d0c;
+      opacity: 0;
+      transition: opacity 0.6s ease;
     }
 
     footer {
@@ -114,7 +123,7 @@
       color: #aaa;
     }
 
-    /* Bigger screens */
+    /* Larger screens */
     @media (min-width: 600px) {
       h1 {
         font-size: 26px;
@@ -125,46 +134,73 @@
       }
 
       .choco-img {
-        width: 140px;
+        width: 150px;
       }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Floating graphics (ONLY chocolate & hearts now) -->
+  <!-- Floating graphics -->
   <div class="floating">🍫</div>
   <div class="floating">💝</div>
   <div class="floating">🍫</div>
 
-  <!-- Card -->
+  <!-- Main Card -->
   <div class="card">
-    <img 
-      src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" 
-      alt="Chocolate"
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/1046/1046857.png"
+      alt="Heart Chocolate"
       class="choco-img"
-    >
+    />
 
-    <h1>Happy Chocolate Day 🍫</h1>
+    <h1>Happy Chocolate Day Vaish🍫</h1>
     <div class="subtitle">A little sweetness, just for you</div>
 
     <p>
-      Some days need chocolate.<br>
-      Some days need you.<br>
+      Some days need chocolate.<br />
+      Some days need you.<br />
       Today gets both 😌
     </p>
 
     <p>
-      This is your sign to smile,<br>
+      This is your sign to smile,<br />
       and maybe save a bite for me 😉
     </p>
 
-    <a href="#" class="btn">Unwrap Your Chocolate</a>
+    <a href="#" class="btn" onclick="unwrapChocolate(event)">
+      Unwrap Your Chocolate
+    </a>
+
+    <div id="secret-message">
+      Surprise 🍫<br />
+      You’re officially sweeter than chocolate today.
+    </div>
 
     <footer>
       Made with cocoa, care & a tiny bit of teasing 💕
     </footer>
   </div>
+
+  <script>
+    function unwrapChocolate(e) {
+      e.preventDefault();
+
+      const msg = document.getElementById("secret-message");
+      const btn = e.target;
+
+      msg.style.display = "block";
+
+      setTimeout(() => {
+        msg.style.opacity = 1;
+      }, 50);
+
+      btn.textContent = "Chocolate Unwrapped 😌";
+      btn.style.pointerEvents = "none";
+      btn.style.opacity = "0.85";
+    }
+  </script>
 
 </body>
 </html>
