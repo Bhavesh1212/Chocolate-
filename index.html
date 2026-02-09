@@ -2,91 +2,167 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Chocolate Day 🍫</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      padding: 0;
       height: 100vh;
-      background: linear-gradient(135deg, #f8cdda, #f5e6cc);
+      background: linear-gradient(135deg, #fbc2eb, #f7d9b9);
       display: flex;
       justify-content: center;
       align-items: center;
       font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
     }
 
+    /* Floating graphics */
+    .floating {
+      position: absolute;
+      font-size: 28px;
+      opacity: 0.25;
+      animation: float 12s infinite linear;
+    }
+
+    .floating:nth-child(1) {
+      left: 10%;
+      animation-duration: 14s;
+    }
+
+    .floating:nth-child(2) {
+      left: 80%;
+      animation-duration: 18s;
+      font-size: 32px;
+    }
+
+    .floating:nth-child(3) {
+      left: 50%;
+      animation-duration: 16s;
+    }
+
+    @keyframes float {
+      from {
+        bottom: -50px;
+      }
+      to {
+        bottom: 110%;
+      }
+    }
+
+    /* Card */
     .card {
       background: #fff;
-      padding: 40px 30px;
-      border-radius: 20px;
-      text-align: center;
-      width: 90%;
+      width: 92%;
       max-width: 360px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      padding: 28px 22px;
+      border-radius: 24px;
+      text-align: center;
+      box-shadow: 0 25px 45px rgba(0,0,0,0.15);
+      position: relative;
+      z-index: 1;
+    }
+
+    .choco-img {
+      width: 120px;
+      max-width: 45%;
+      margin-bottom: 10px;
     }
 
     h1 {
-      margin: 0;
-      font-size: 28px;
+      font-size: 22px;
+      margin: 10px 0 6px;
       color: #5a2d0c;
     }
 
-    .choco {
-      font-size: 48px;
-      margin: 20px 0;
+    .subtitle {
+      font-size: 14px;
+      color: #a05a2c;
+      margin-bottom: 16px;
     }
 
     p {
-      color: #555;
-      font-size: 16px;
+      font-size: 15px;
       line-height: 1.5;
-      margin: 15px 0;
+      color: #555;
+      margin: 12px 0;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 18px;
       padding: 12px 22px;
       background: #5a2d0c;
       color: #fff;
       text-decoration: none;
-      border-radius: 25px;
+      border-radius: 999px;
       font-size: 15px;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: all 0.25s ease;
     }
 
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(90,45,12,0.4);
+    .btn:active {
+      transform: scale(0.95);
     }
 
     footer {
-      margin-top: 20px;
-      font-size: 13px;
-      color: #999;
+      margin-top: 16px;
+      font-size: 12px;
+      color: #aaa;
+    }
+
+    /* Bigger screens */
+    @media (min-width: 600px) {
+      h1 {
+        font-size: 26px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      .choco-img {
+        width: 140px;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- Floating graphics -->
+  <div class="floating">🍫</div>
+  <div class="floating">💝</div>
+  <div class="floating">🍩</div>
+
+  <!-- Card -->
   <div class="card">
-    <h1>Happy Chocolate Day Vaish</h1>
-    <div class="choco">🍫💝</div>
+    <img 
+      src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" 
+      alt="Chocolate"
+      class="choco-img"
+    >
+
+    <h1>Happy Chocolate Day 🍫</h1>
+    <div class="subtitle">A little sweetness, just for you</div>
 
     <p>
-      Just a small reminder that life is sweeter<br>
-      when there’s chocolate… and *you* 😌
+      Some days need chocolate.<br>
+      Some days need you.<br>
+      Today gets both 😌
     </p>
 
     <p>
-      Consider this a virtual chocolate.<br>
-      The real one is pending delivery 😉
+      This is your sign to smile,<br>
+      and maybe save a bite for me 😉
     </p>
 
-    <a href="#" class="btn">Claim Your Chocolate</a>
+    <a href="#" class="btn">Unwrap Your Chocolate</a>
 
     <footer>
-      Made with extra cocoa & a little teasing 🍩
+      Made with cocoa, care & a tiny bit of teasing 💕
     </footer>
   </div>
 
